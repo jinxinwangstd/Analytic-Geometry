@@ -1,2 +1,2 @@
-# Analytical-Geometry
-Notes about the course "Analytical Geometry"
+# Analytic-Geometry
+Notes about the course "Analytic Geometry"
