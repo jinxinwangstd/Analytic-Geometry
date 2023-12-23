@@ -1,0 +1,74 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Fundamental Theorem of Affine Transformations"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+\section{The Vector Transformation Decided by an Affine Transformation}
+
+\section{Fundamental Theorem of Affine Transformations}
+
+\begin{theorem}[Fundamental Theorem of Affine Transformations]
+  Let $\pi$ be a plane.
+  \begin{description}
+    \item[T1] Suppose $f: \pi \to \pi$ is an affine transformation, $I = \lbrack 
+    O; \vec{e}_1, \vec{e}_2 \rbrack$ is an affine coordinate system on $\pi$, 
+    then $I' = \lbrack f(O); f(\vec{e}_1), f(\vec{e}_2) \rbrack$ is also an 
+    affine coordinate system on $\pi$, and for all $P \in \pi$, the coordinates 
+    of $P$ in $I$ are the same as the one of $f(P)$ in $I'$.
+    \item[T2] Let $I = \lbrack O; \vec{e}_1, \vec{e}_2 \rbrack$ and $I' = \lbrack 
+    O'; \vec{e}'_1, \vec{e}'_2 \rbrack$ be two affine coordinate systems on $\pi$. 
+    There exists an mapping $f: \pi \to \pi$ as following: for all $P \in \pi$ 
+    with the coordinates $(x, y)$ in $I$, let $f(P)$ be the point with the same 
+    coordinates $(x, y)$ in $I'$, and $f: \pi \to \pi$ is an affine 
+    transformation.
+  \end{description}
+\end{theorem}
+\begin{proof}
+  (TODO)
+\end{proof}
+
+\begin{remark}
+  A conclusion from the fundamental theorem of affine transformations is that 
+  for any two affine coordinate systems $I$ and $I'$ on a plane $\pi$, there 
+  exists a unique affine transformation $f: \pi \to \pi$ such that $f(I) = I'$.
+
+  \textbf{T2} proves the existence of $f: \pi \to \pi$.
+
+  \textbf{T1} proves the uniqueness of $f: \pi \to \pi$. If there are two affine 
+  transformations $f_1: \pi \to \pi$ and $f_2: \pi \to \pi$ with $f_1(I) = I'$ 
+  and $f_2(I) = I'$, then for all $P \in \pi$, $f_1(P)$ and $f_2(P)$ have the 
+  same coordinates in $I'$, which is the coordinates of $P$ in $I$, and thus 
+  $f_1(P) = f_2(P)$. Hence $f_1 = f_2$.
+\end{remark}
+
+\end{document}
