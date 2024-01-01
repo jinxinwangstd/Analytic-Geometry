@@ -1,0 +1,177 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Surfaces in Three Dimensional Euclidean Space"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+Generally speaking, 建立一个几何图形的一般方程，要找出图形上点的几何特征，然后将它转化为坐标所要满足的条件，就得到了图形的一般方程。
+
+\section{Surface of Revolution旋转面}
+
+\subsection{Definition of Surface of Revolution and its Geometric Elements}
+
+\subsection{General Method to Find the Equation of a Surface of Revolution}
+
+Given the axis of rotation $l$ and a generatrix $\varGamma$ of a surface of revolution $S$:
+\begin{equation}
+  M \in S \Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace (\vec{MM'} \perp l) \wedge (d(M, l) = d(M', l))
+\end{equation}
+
+If the equation of the axis of rotation $l$ is given in the point-direction form with $M_0$ and $\vec{u}$, then
+\begin{equation}
+  M \in S \Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace (\vec{MM'} \perp \vec{u}) \wedge (d(M, M_0) = d(M', M_0)) 
+\end{equation}
+
+\subsection{Surface of Revolution with Straight Generatrix}
+\begin{itemize}
+  \item cylinder
+  \begin{itemize}
+    \item Generation: A straight generatrix rotating by an axis parallel to the generatrix
+    \item Geometric elements: the axis of rotation and the radius.
+  \end{itemize}
+  \item cone
+  \begin{itemize}
+    \item Generation: A straight generatrix rotating by an axis intersecting the generatrix
+    \item Geometric elements: the axis of rotation, the vertex, and the half-angle
+  \end{itemize}
+  \item Rotated hyperboloid of one sheet
+  \begin{itemize}
+    \item Generation: A straight generatrix rotating by an axis skew with the generatrix and not perpendicular with it.
+    \item Geometric elements: the axis of rotation and the generatrix
+  \end{itemize}
+  \item plane with a circular hole
+  \begin{itemize}
+    \item Generation: A straight generatrix rotating by an axis skew and perpendicular with it.
+  \end{itemize}
+\end{itemize}
+
+\section{Cylindrical Surface柱面}
+
+\subsection{General Method to Find the Equation of a Cylindrical Surface}
+Given the vector $\vec{u}(u_x, u_y, u_z)$ to which the axis of rotation is parallel and the directrix $\varGamma$ whose equation is $
+\begin{cases}
+  F(x, y, z) = 0 \\
+  G(x, y, z) = 0
+\end{cases}$ of a cylindrical surface $S$, then for any point $M(x, y, z)$
+\begin{equation}
+  \begin{split}
+    M \in S &\Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace \vec{MM'} \parallel \vec{u} \\
+            &\Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace \vec{MM'} = t\vec{u}, t \in \mathbb{R} \\
+            &\Leftrightarrow \exists t \in \mathbb{R} \thickspace \textnormal{s.t.} \thickspace 
+            \begin{cases}
+              F(x + t u_x, y + t u_y, z + t u_z) = 0 \\
+              G(x + t u_x, y + t u_y, z + t u_z) = 0
+            \end{cases}
+  \end{split}
+\end{equation}
+
+\section{Conical Surface锥面}
+
+\begin{definition}[Geometric Definition of Conical Surfaces]
+  A conical surface consists of a series of lines passing through a same point. 
+  Each line is called a generatrix. The point is called the apex of the conical 
+  surface. A line intersecting with all generatrix is called a directrix of the 
+  conical surface.
+\end{definition}
+
+The elements to determine a conical surface: the apex and the directrix.
+
+\subsection{General Method to Find the Equation of a Conical Surface}
+Given the apex $M_0(x_0, y_0, z_0)$ and the directrix $\varGamma$ whose equation is $
+\begin{cases}
+  F(x, y, z) = 0 \\
+  G(x, y, z) = 0
+\end{cases}$ of a conical surface $S$, then
+\begin{equation}
+  \begin{split}
+    M \in S &\Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace M, M', M_0 \thickspace \textnormal{lie in the same line} \thickspace \\
+            &\Leftrightarrow \exists M' \in \varGamma \thickspace \textnormal{s.t.} \thickspace \vec{OM'} = t\vec{OM} + (1 - t)\vec{OM_0}, t \in \mathbb{R} \\
+            &\Leftrightarrow \exists t \in \mathbb{R} \thickspace \textnormal{s.t.} \thickspace
+            \begin{cases}
+              F(tx + (1 - t)x_0, ty + (1 - t)y_0, tz + (1 - t)z_0) = 0 \\
+              G(tx + (1 - t)x_0, ty + (1 - t)y_0, tz + (1 - t)z_0) = 0
+            \end{cases}
+  \end{split}
+\end{equation}
+
+\begin{remark}
+  The equation derived by the above process doesn't include the apex in its zero 
+  set.
+\end{remark}
+\begin{remark}
+  The equation derived by the above process usually has some fractions (分式) with 
+  variables in their denominators, e.g. $\frac{4x^2}{z^2} - \frac{y^2}{z^2} = 1$, 
+  due to the elimination of parameters. It is tempting to transform it into an 
+  equation without fractions, with the benefit of including the apex in its zero 
+  set. However, the transformation also has possible risk of including more 
+  points not belonging to the conical surface in the zero set.
+
+  Ex1: The equation of a conical surface $\frac{4x^2}{z^2} - \frac{y^2}{z^2} = 1$ 
+  with the origin as its apex, can be transformed to $4x^2 - y^2 - z^2 = 0$. 
+  Compared with the previous equation, the transformation adds $(0, 0, 0)$ (the 
+  apex), and the points in the lines
+  $\begin{cases}
+    2x - y = 0 \\
+    z = 0
+  \end{cases}$, and
+  $\begin{cases}
+    2x + y = 0 \\
+    z = 0
+  \end{cases}$ to the point set of the conical surface, which is wrong.
+
+  Ex2: The equation of a conical surface $\frac{x^2}{z^2} + \frac{y^2}{z^2} = 3$ 
+  with the origin as its apex, can be transformed to $x^2 + y^2 - 3z^2 = 0$. 
+  Compared with the previous equation, the transformation adds $(0, 0, 0)$ (the 
+  apex) to the point set of the conical surface, which is fine.
+
+  To determine whether such transformation is valid, wen need to work out the 
+  points added to the zero set by the elimination of denominators by solving the 
+  transformed equation with the denominators set to 0.
+\end{remark}
+
+\begin{proposition}
+  The graph of a homogeneous equation of degree $n$ is a conical surface with 
+  the origin as its apex.
+\end{proposition}
+\begin{proof}
+  Hint:
+  \begin{itemize}
+    \item Since the equation is a homogeneous equation of degree $n$ (it is 
+    clear that $n \geq 1$ otherwise we will have a trivial equation of $0 = 0$), 
+    the origin is in its point set.
+    \item For any point $M(x, y, z) \in S$, it is true that $M'(\lambda x, 
+    \lambda y, \lambda z) \in S, \lambda \in \mathbb{R}$. All these points form 
+    a line through the origin.
+  \end{itemize}
+\end{proof}
+
+\end{document}

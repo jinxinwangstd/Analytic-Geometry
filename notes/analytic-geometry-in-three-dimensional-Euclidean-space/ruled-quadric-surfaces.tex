@@ -1,0 +1,236 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "Ruled Quadric Surfaces"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+Geometric interpretation of ruled surface: 由一簇直线构成的曲面叫做直纹面。
+
+\section{Quadric Cylindrical Surface二次柱面}
+
+Based on the geometric interpretation of cylindrical surfaces, they are a kind 
+of ruled surface.
+
+\section{Quadric Conical Surface二次锥面}
+
+Based on the geometric interpretation of conical surfaces, they are a kind of 
+ruled surface.
+
+\section{Hypobolic Paraboloid双曲抛物面}
+
+\subsection{Equation of Generatrix in Hypobolic Paraboloid}
+
+Given the standard equation of a hypobolic paraboloid:
+\begin{equation}
+  \frac{x^2}{a^2} - \frac{y^2}{b^2} = 2z
+\end{equation}
+\[
+  (\frac{x}{a} + \frac{y}{b})(\frac{x}{a} - \frac{y}{b}) = 2z
+\]
+Let $c = \frac{x}{a} + \frac{y}{b}$, then the line with the equation
+\[
+  l_c = 
+  \begin{cases}
+    \frac{x}{a} + \frac{y}{b} = c \\
+    c(\frac{x}{a} - \frac{y}{b}) = 2z
+  \end{cases}
+\]
+belongs to the hypobolic paraboloid.
+
+Let $c = \frac{x}{a} - \frac{y}{b}$, then the line with the equation
+\[
+  l_c' = 
+  \begin{cases}
+    \frac{x}{a} - \frac{y}{b} = c \\
+    c(\frac{x}{a} + \frac{y}{b}) = 2z
+  \end{cases}
+\]
+belongs to the hypobolic paraboloid.
+
+Therefore, we find two collection of straight generatrix in the hypoboloic 
+paraboloid:
+\begin{equation}
+  \begin{split}
+    I = \lbrace l_c | c \in \mathbb{R} \rbrace
+    I' = \lbrace l_c' | c \in \mathbb{R} \rbrace
+  \end{split}
+\end{equation}
+
+Rewrite the equations of the two collections of straight generatrix in the
+point-direction form.
+
+$l_c$ passes through the point $M_c(ac, 0, \frac{c^2}{2})$, and is parallel to 
+the vector $\vec{u_c}(-a, b, -c)$.
+
+$l_c'$ passes through the point $M_c'(ac, 0, \frac{c^2}{2})$, and is parallel to 
+the vector $\vec{u_c}(a, b, c)$.
+
+\subsection{Properties of Generatrix in Hypobolic Paraboloid}
+\begin{itemize}
+  \item For every point $P \in S$, each collection of straight generatrix has 
+  exactly one generatrix passing through it.
+  \item Generatrix from the same collection is parallel to a plane.
+  \item Two generatrix from the same collection are skew with each other.
+  \item Generatrix from different collections intersect.
+  \item There is no straight generatrix belonging to both collections.
+  \item All straight generatrix in $S$ belong to either collection.
+\end{itemize}
+
+\section{Hyperboloid of One Sheet单叶双曲面}
+
+\subsection{Equation of Generatrix in Hyperboloid of One Sheet}
+
+Given the standard equation of a hyperboloid of one sheet:
+\begin{equation}
+  \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1
+\end{equation}
+\[
+  (\frac{x}{a} + \frac{z}{c})(\frac{x}{a} - \frac{z}{c}) = (1 + \frac{y}{b})(1 - \frac{y}{b})
+\]
+\begin{equation}
+  l_{s:t} =
+  \begin{cases}
+    s(\frac{x}{a} + \frac{z}{c}) = t(1 + \frac{y}{b}) \\
+    t(\frac{x}{a} - \frac{z}{c}) = s(1 - \frac{y}{b})
+  \end{cases}
+\end{equation}
+\begin{equation}
+  l_{s:t}' =
+  \begin{cases}
+    s(\frac{x}{a} + \frac{z}{c}) = t(1 - \frac{y}{b}) \\
+    t(\frac{x}{a} - \frac{z}{c}) = s(1 + \frac{y}{b})
+  \end{cases}
+\end{equation}
+
+It is apparent that each straight generatrix one-to-one corresponds to a value of $s:t$ where
+
+\begin{equation}
+  l_{\theta} =
+  \begin{cases}
+    \cos\theta(\frac{x}{a} + \frac{z}{c}) = \sin\theta(1 + \frac{y}{b}) \\
+    \sin\theta(\frac{x}{a} - \frac{z}{c}) = \cos\theta(1 - \frac{y}{b})
+  \end{cases}
+\end{equation}
+\begin{equation}
+  l_{\theta}' =
+  \begin{cases}
+    \cos\theta(\frac{x}{a} + \frac{z}{c}) = \sin\theta(1 - \frac{y}{b}) \\
+    \sin\theta(\frac{x}{a} - \frac{z}{c}) = \cos\theta(1 + \frac{y}{b})
+  \end{cases}
+\end{equation}
+
+\begin{remark}
+  
+\end{remark}
+
+Rewrite the equations of the two collections of straight generatrix in the
+point-direction form. Take $l_{\theta}$ as an example:
+\[
+  l_{\theta} =
+  \begin{cases}
+    \frac{\cos\theta}{a} x - \frac{\sin\theta}{b} y + \frac{\cos\theta}{c} z = \sin\theta \\
+    \frac{\sin\theta}{a} x + \frac{\cos\theta}{b} y - \frac{\sin\theta}{c} z = \cos\theta
+  \end{cases} 
+\]
+Let $z = 0$, then we solve the following linear system with two equations and two 
+unknowns
+\begin{equation} \label{eq:15}
+  \begin{cases}
+    \frac{\cos\theta}{a} x - \frac{\sin\theta}{b} y = \sin\theta \\
+    \frac{\sin\theta}{a} x + \frac{\cos\theta}{b} y = \cos\theta
+  \end{cases}  
+\end{equation}
+and find the only solution $x = a\sin2\theta, y = b\cos2\theta$. Therefore, the 
+straight generatrix $l_{\theta}$ pass through the point 
+$M_{\theta}(a\sin2\theta, b\cos2\theta, 0)$.
+
+Besides, $l_{\theta}$ is parallel to the vector $\vec{u_{\theta}}(
+\begin{vmatrix}
+  -\frac{\sin\theta}{b} & \frac{\cos\theta}{c} \\
+  \frac{\cos\theta}{b} & -\frac{\sin\theta}{c}
+\end{vmatrix},
+\begin{vmatrix}
+  \frac{\cos\theta}{c} & \frac{\cos\theta}{a} \\
+  -\frac{\sin\theta}{c} & \frac{\sin\theta}{a}
+\end{vmatrix},
+\begin{vmatrix}
+  \frac{\cos\theta}{a} & -\frac{\sin\theta}{b} \\
+  \frac{\sin\theta}{a} & \frac{\cos\theta}{b}
+\end{vmatrix}
+)$, which is \\ $\vec{u_{\theta}}(-\frac{\cos2\theta}{bc}, 
+\frac{\sin2\theta}{ac}, \frac{1}{ab})$, or in better form $\vec{u_{\theta}}
+(-a\cos2\theta, b\sin2\theta, c)$.
+
+\begin{remark}
+  Previously I had this doubt that why $l_\theta$ passes through the point 
+  $M_\theta$ instead of any other points or more points in the $xOy$ plane. 
+  Based on the equation (\ref{eq:15}), there is only one solution, which means 
+  $l_\theta$ has only one intersection point with the $xOy$ plane. Geometrically 
+  it also makes sense since $l_\theta$ is not parallel to the $xOy$ plane given 
+  its $z$-component is non-zero.
+\end{remark}
+
+Similarly, we can find that $l_\theta'$ passes through the point $M_\theta'
+(a\sin2\theta, -b\cos2\theta, 0)$, and is parallel to the vector 
+$\vec{u_\theta'}(a\cos2\theta, b\sin2\theta, -c)$.
+
+\subsection{Properties of Generatrix in Hyperboloid of One Sheet}
+\begin{itemize}
+  \item For every point $P \in S$, each collection of straight generatrix has 
+  exactly one generatrix passing through it.
+  \item Two generatrix from the same collection are skew with each other.
+  \item Three generatrix from the same collection are not parallel to a plane.
+  \item Generatrix from different collections are coplanar.
+  \item There is no straight generatrix belonging to both collections.
+  \item All straight generatrix in $S$ belong to either collection.
+\end{itemize}
+
+\section{Identification of Ruled Quadric Surface}
+
+There are only four kinds of ruled quadric surface except those within a plane:
+\begin{itemize}
+  \item Quadric Cylindrical Surface
+  \item Quadric Conical Surface
+  \item Hypobolic Paraboloid
+  \item Hyperboloid of One Sheet
+\end{itemize}
+
+We can use the characteristics of these four kinds of ruled quadric surface to 
+differentiate them and identify a random ruled quadric surface:
+\begin{itemize}
+  \item Parallelism of generatrix: There exist parallel generatrix in 
+  hyperboloid of one sheet, but any two generatrix in hypobolic paraboloid are 
+  not parallel.
+  \item Parallelism between generatrix and planes: 
+\end{itemize}
+
+
+\end{document}
