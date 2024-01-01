@@ -1,0 +1,87 @@
+\documentclass[onecolumn]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\geometry{a4paper,scale=0.8}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{Notes of "The Equation of a Plane"}
+\author{Jinxin Wang}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+\begin{itemize}
+  \item The equation of a plane
+  \item A geometric interpretation of the coefficients of the general equation of a plane
+  \item Positional relationships between planes
+  \item A geometric interpretation of a linear inequality with three unknowns
+\end{itemize}
+
+\section{The equation of a plane}
+
+\begin{proposition}
+  In an affine coordinate system, a plane corresponds to a linear equation with 
+  three unknowns in which at least one of their coefficients are nonzero, and 
+  vice versa.
+\end{proposition}
+\begin{proof}
+  Hint: (TODO)
+\end{proof}
+\begin{remark}[The general equation of a plane]
+  
+\end{remark}
+
+\section{A geometric interpretation of the coefficients of the general equation of a plane}
+\begin{theorem}
+  Given the general equation of a plane: $Ax + By + Cz + D = 0$, a vector 
+  $\vec{u} = (u_x, u_y, u_z)$ is parallel to the plane if and only if
+  \begin{equation}
+    Au_x + Bu_y + Cu_z = 0
+  \end{equation}
+\end{theorem}
+\begin{proof}
+  Hint: (TODO)
+\end{proof}
+
+\section{Positional relationships between planes}
+There are only two kinds of positional relationships between planes:
+\begin{itemize}
+  \item Parallel
+  \item Intersected
+\end{itemize}
+
+\begin{example}
+  The intersection of three planes $\pi_1: $, $\pi_2: $, $\pi_3$ is unique $\Leftrightarrow$
+  $\begin{vmatrix}
+    A_1 & B_1 & C_1 \\
+    A_2 & B_2 & C_2 \\
+    A_3 & B_3 & C_3
+  \end{vmatrix} \neq 0$
+\end{example}
+
+\section{A geometric interpretation of a linear inequality with three unknowns}
+
+
+\end{document}
