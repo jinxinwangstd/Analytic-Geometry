@@ -34,52 +34,69 @@
 \section{Overview}
 \begin{itemize}
   \item Two types of equations of a line
+  \begin{itemize}
+    \item The point-direction equation of a line
+    \item The general equation of a line
+    \item Transformation between the two types of equations of a line
+    \begin{itemize}
+      \item Rmk: Transform a point-direction equation to a general equation
+      \item Rmk: Transform a general equation to a point-direction equation
+    \end{itemize}
+  \end{itemize}
   \item Positional relationships between a line and a plane
+  \item Positional relationships between two lines
+  \begin{itemize}
+    \item Criterion for positional relationships with the point-direction form
+    \item Criterion for positional relationships with the general form
+  \end{itemize}
 \end{itemize}
 
 \section{Two types of equations of a line}
 
-\subsection{The point-direction form of the equation of a line}
+\subsection{The point-direction equation of a line}
 
 \subsection{The general equation of a line}
 
-\subsection{Transformation between two types of the equations of a line}
+\subsection{Transformation between the two types of equations of a line}
 
-Given $\frac{x - x_0}{u_x} = \frac{y - y_0}{u_y} = \frac{z - z_0}{u_z}$, 
-the equivalent general form is
-\[
+\begin{remark}[Transform a point-direction equation to a general equation]
+  Given $\frac{x - x_0}{u_x} = \frac{y - y_0}{u_y} = \frac{z - z_0}{u_z}$, 
+  the equivalent general form is
+  \[
   \begin{cases}
     \frac{x - x_0}{u_x} = \frac{y - y_0}{u_y} \\
     \frac{y - y_0}{u_y} = \frac{z - z_0}{u_z}
   \end{cases}
-\]
-\begin{equation}
-  \begin{cases}
-    u_y x - u_x y + u_x y_0 - u_y x_0 = 0 \\
-    u_z y - u_y z + u_y z_0 - u_z y_0 = 0
-  \end{cases} 
-\end{equation}
+  \]
+  \begin{equation}
+    \begin{cases}
+      u_y x - u_x y + u_x y_0 - u_y x_0 = 0 \\
+      u_z y - u_y z + u_y z_0 - u_z y_0 = 0
+    \end{cases} 
+  \end{equation}
+\end{remark}
 
-Given the general equation of a line $l$: 
-\[
+\begin{remark}[Transform a general equation to a point-direction equation]
+  Given the general equation of a line $l$: 
+  \[
   \begin{cases}
     \pi_1: A_1 x + B_1 y + C_1 z + D_1 = 0 \\
     \pi_2: A_2 x + B_2 y + C_2 z + D_2 = 0 \\
   \end{cases}
-\]
-we can find a solution $(x_0, y_0, z_0)$ to the linear system, which is the 
-coordinate of a point on the line. Since a vector $u(u_x, u_y, u_z) \parallel l$ 
-is equivalent to $(u \parallel \pi_1) \wedge (u \parallel \pi_2)$. According to 
-the theorem of parallelism between a vector and a plane, the previous condition 
-is equivalent to 
-\[
+  \]
+  we can find a solution $(x_0, y_0, z_0)$ to the linear system, which is the 
+  coordinate of a point on the line. Since a vector $u(u_x, u_y, u_z) \parallel l$ 
+  is equivalent to $(u \parallel \pi_1) \wedge (u \parallel \pi_2)$. According to 
+  the theorem of parallelism between a vector and a plane, the previous condition 
+  is equivalent to 
+  \[
   \begin{cases}
     A_1 u_x + B_1 u_y + C_1 u_z = 0 \\
     A_2 u_x + B_2 u_y + C_2 u_z = 0 \\
   \end{cases}
-\]
-then one solution of $u$ is
-\[
+  \]
+  then one solution of $u$ is
+  \[
   (u_x, u_y, u_z) = 
   \left(
   \begin{vmatrix}
@@ -95,7 +112,8 @@ then one solution of $u$ is
     A_2 & B_2
   \end{vmatrix}
   \right)
-\]
+  \]
+\end{remark}
 
 \section{Positional relationships between a line and a plane}
 There are three kinds of positional relationships between a line and a plane:
@@ -179,38 +197,55 @@ direction:
   \end{itemize}
 \end{itemize}
 
-\subsection{The Point-Direction Form}
-
-$l_1 \parallel l_2$ $\Leftrightarrow$ $u_1 \parallel u_2$
-
-$l_1$与$l_2$异面 $\Leftrightarrow$ $(\vec{M_1M_2}, u_1, u_2) \neq 0$
-
+\subsection{Criterion for positional relationships with the point-direction form}
+\begin{proposition}
+  Let $l_1$ be a line passing through $M_1$ and parallel to $u_1$, and $l_2$ be a line passing through $M_2$ and parallel to $u_2$. 
+  \begin{itemize}
+    \item $l_1$与$l_2$重合 $\Leftrightarrow$ $(u_1 \parallel u_2) \wedge \neg(\vec{M_1M_2} \parallel u_1)$
+    \item $l_1$与$l_2$平行不重合 $\Leftrightarrow$ $(u_1 \parallel u_2) \wedge (\vec{M_1M_2} \parallel u_1)$
+    \item $l_1$与$l_2$相交 $\Leftrightarrow$ $\neg(u_1 \parallel u_2) \wedge ((\vec{M_1M_2}, u_1, u_2) = 0)$
+    \item $l_1$与$l_2$异面 $\Leftrightarrow$ $\neg(u_1 \parallel u_2) \wedge ((\vec{M_1M_2}, u_1, u_2) \neq 0)$
+  \end{itemize}
+\end{proposition}
 \begin{proof}
   
 \end{proof}
 
-\subsection{The General Form}
-
-$l_1 \parallel l_2$ $\Leftrightarrow$ $
-\begin{vmatrix}
-  A_1 & B_1 & C_1 \\
-  A_2 & B_2 & C_2 \\
-  A_3 & B_3 & C_3 
-\end{vmatrix} = 
-\begin{vmatrix}
-  A_1 & B_1 & C_1 \\
-  A_2 & B_2 & C_2 \\
-  A_4 & B_4 & C_4  
-\end{vmatrix} = 0$
-
-$l_1$与$l_2$异面 $\Leftrightarrow$ $
-\begin{vmatrix}
-  A_1 & B_1 & C_1 & D_1 \\
-  A_2 & B_2 & C_2 & D_2 \\
-  A_3 & B_3 & C_3 & D_3 \\
-  A_4 & B_4 & C_4 & D_4
-\end{vmatrix} \neq 0$
-
+\subsection{Criterion for positional relationships with the general form}
+\begin{proposition}
+  Let $l_1$ be a line with the general equation as $
+  \begin{cases}
+    A_1 x + B_1 y + C_1 z + D_1 = 0 \\
+    A_2 x + B_2 y + C_2 z + D_2 = 0 \\
+  \end{cases}$, and $l_2$ be a line with the general equation as $
+  \begin{cases}
+    A_3 x + B_3 y + C_3 z + D_3 = 0 \\
+    A_4 x + B_4 y + C_4 z + D_4 = 0 \\   
+  \end{cases}$
+  \begin{itemize}
+    \item $l_1 \parallel l_2$ $\Leftrightarrow$ $
+    \begin{vmatrix}
+      A_1 & B_1 & C_1 \\
+      A_2 & B_2 & C_2 \\
+      A_3 & B_3 & C_3 
+    \end{vmatrix} = 
+    \begin{vmatrix}
+      A_1 & B_1 & C_1 \\
+      A_2 & B_2 & C_2 \\
+      A_4 & B_4 & C_4  
+    \end{vmatrix} = 0$
+    \item $l_1$与$l_2$重合 $\Leftrightarrow$ 
+    \item $l_1$与$l_2$平行不重合 $\Leftrightarrow$ 
+    \item $l_1$与$l_2$相交 $\Leftrightarrow$
+    \item $l_1$与$l_2$异面 $\Leftrightarrow$ $
+    \begin{vmatrix}
+      A_1 & B_1 & C_1 & D_1 \\
+      A_2 & B_2 & C_2 & D_2 \\
+      A_3 & B_3 & C_3 & D_3 \\
+      A_4 & B_4 & C_4 & D_4
+    \end{vmatrix} \neq 0$
+  \end{itemize}
+\end{proposition}
 \begin{proof}
   
 \end{proof}
